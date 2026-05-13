@@ -1,0 +1,83 @@
+:root {
+    --primary-color: #6366f1;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --completed-color: #94a3b8;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.todo-container {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+h1 { text-align: center; color: var(--text-color); }
+
+form { display: flex; gap: 10px; margin-bottom: 20px; }
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    outline: none;
+}
+
+input[type="text"]:focus { border-color: var(--primary-color); }
+
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+#add-btn { background: var(--primary-color); color: white; }
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.filter-btn { background: transparent; color: #64748b; }
+.filter-btn.active { color: var(--primary-color); font-weight: bold; }
+
+#clear-completed { background: #fee2e2; color: #ef4444; font-size: 0.8rem; }
+
+ul { list-style: none; padding: 0; }
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.2s;
+}
+
+li:hover { background: #f8fafc; }
+
+.task-text { flex: 1; margin-left: 10px; cursor: pointer; }
+
+.completed .task-text {
+    text-decoration: line-through;
+    color: var(--completed-color);
+}
+
+.delete-btn { color: #cbd5e1; font-weight: bold; }
+.delete-btn:hover { color: #ef4444; }
